@@ -2,7 +2,25 @@
 
 ## Java
 
-Download JDK package and install. The brew version of Java is 9, which has some compatibility issue with macOS High Sierra (10.13).
+The brew version of Java is 9, which has some compatibility issue with macOS High Sierra (10.13).
+
+If you have already installed JDK9 using the JDK package, you should uninstall it using the following commands:
+
+``` bash
+$ sudo rm -fr /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
+$ sudo rm -fr /Library/PreferencePanes/JavaControlPanel.prefPane
+$ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
+```
+
+ There are two ways to install JDK8:
+
+1. Download and install JDK8 from Java website.
+
+2. Install from brew
+
+   ``` bash
+   $ brew cask install caskroom/versions/java8
+   ```
 
 ## Basic Components
 
@@ -117,6 +135,9 @@ Download JDK package and install. The brew version of Java is 9, which has some 
 $ brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils
 
 $ brew cask install firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpgtools aliwangwang qq telegram disk-inventory-x vlc ichm namechanger grammarly cyberduck thunder baidunetdisk spotify typora sourcetree burn keka veracrypt go2shell adobe-creative-cloud oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark
+
+# android development
+$ brew cask install android-sdk
 
 # flash player for safari, chrome and firefox, no good to install it, power/resource consuming.
 $ brew cask install flash-player flash-npapi
