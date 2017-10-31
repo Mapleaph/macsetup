@@ -134,7 +134,7 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 ``` bash
 $ brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils
 
-$ brew cask install unetbootin etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpgtools aliwangwang qq telegram disk-inventory-x vlc ichm namechanger grammarly cyberduck thunder baidunetdisk spotify typora sourcetree burn keka veracrypt go2shell adobe-creative-cloud oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark
+$ brew cask install appcleaner youdaodict unetbootin etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpgtools aliwangwang qq telegram disk-inventory-x vlc ichm namechanger grammarly cyberduck thunder baidunetdisk spotify typora sourcetree burn keka veracrypt go2shell adobe-creative-cloud oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark
 
 # android development
 $ brew cask install android-sdk
