@@ -35,6 +35,7 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    ``` bash
    $ brew install proxychains-ng
    # then configure /usr/local/etc/proxychains.conf
+   socks5 127.0.0.1 <port>
    ```
 
 3. source code pro fonts
@@ -102,7 +103,7 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    # list all available python versions
    $ pyenv versions
    # install python 3.6.2
-   CFLAGS="-I$(brew --prefix openssl)/include" \
+   $ CFLAGS="-I$(brew --prefix openssl)/include" \
    LDFLAGS="-L$(brew --prefix openssl)/lib" \
    pyenv install 3.6.2
    ```
@@ -138,7 +139,7 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 ``` bash
 $ brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils
 
-$ brew cask install appcleaner youdaodict unetbootin etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpgtools aliwangwang qq telegram disk-inventory-x vlc ichm namechanger grammarly cyberduck thunder baidunetdisk spotify typora sourcetree burn keka veracrypt go2shell adobe-creative-cloud oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark
+$ brew cask install appcleaner youdaodict unetbootin etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk spotify typora sourcetree burn keka veracrypt go2shell adobe-creative-cloud oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x
 
 # android development
 $ brew cask install android-sdk
@@ -163,8 +164,8 @@ $ brew install emacs-plus
 $ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # paid software
-$ brew cask install parallels-desktop flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink dash moom contexts istat-menus bartender 1password boom-3d alfred
-folx iexplorer vmware-fusion
+$ brew cask install parallels flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink dash moom contexts istat-menus bartender 1password boom-3d alfred
+iexplorer vmware-fusion microsoft-office paragon-ntfs
 
 # using npm
 $ npm install -g vtop
@@ -192,4 +193,11 @@ Copy all extensions from old ~/Library/Safari/Extensions folder, then reinstall 
    3. weibo v6
 9. sVim
 10. Thunder Extension (installed from Thunder app)
+
+
+## Enable Anywhere APPs
+
+``` bash
+$ sudo spctl --master-disable
+```
 
