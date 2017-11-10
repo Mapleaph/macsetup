@@ -101,6 +101,10 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    $ source $HOME/.zshrc
    # list all available python versions
    $ pyenv versions
+   # install python 3.6.2
+   CFLAGS="-I$(brew --prefix openssl)/include" \
+   LDFLAGS="-L$(brew --prefix openssl)/lib" \
+   pyenv install 3.6.2
    ```
 
 3. nvm (node version manager)
@@ -160,7 +164,7 @@ $ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # paid software
 $ brew cask install parallels-desktop flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink dash moom contexts istat-menus bartender 1password boom-3d alfred
-folx iexplorer
+folx iexplorer vmware-fusion
 
 # using npm
 $ npm install -g vtop
