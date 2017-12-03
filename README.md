@@ -35,7 +35,7 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    ``` bash
    $ brew install proxychains-ng
    # then configure /usr/local/etc/proxychains.conf
-   socks5 127.0.0.1 <port>
+   socks5 127.0.0.1 8887
    ```
 
 3. source code pro fonts
@@ -59,9 +59,9 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    ``` bash
    # iterm2
    $ brew cask install iterm2
-   # download color schemes, afterglow is preferred
+   # download color schemes, "Afterglow" is preferred
    $ git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git
-   # then set font to source code pro, preferred size is 12
+   # then set font to Source Code Pro, preferred size is 12
    ```
 
 6. ohmyzsh
@@ -120,8 +120,8 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    $ nvm ls version
    # list currently used versions
    $ nvm current
-   # install nodejs 6.11.4
-   $ nvm install 6.11.4
+   # list available remote versions
+   $ nvm ls-remote
    ```
 
 4. npm (node package manager)
@@ -137,9 +137,9 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 ## Common Components
 
 ``` bash
-$ brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils
+$ brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils crosstool-ng tmux
 
-$ brew cask install appcleaner youdaodict unetbootin etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk spotify typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x jdownloader karabiner-elements nutstore vnc-viewer youdaonote yu-writer 115browser tftpserver
+$ brew cask install appcleaner youdaodict unetbootin etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk spotify typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x jdownloader karabiner-elements nutstore vnc-viewer youdaonote yu-writer 115browser tftpserver burn
 
 # android development
 $ brew cask install android-sdk
@@ -157,6 +157,9 @@ $ brew install imgcat
 # visual studio code insiders
 $ brew tap caskroom/versions
 $ brew install caskroom/versions/visual-studio-code-insiders
+# vscode plugins
+# 1. vscode-icons
+# 2. one monokai theme
 
 # spacemacs
 $ brew tap d12frosted/emacs-plus
@@ -164,40 +167,47 @@ $ brew install emacs-plus
 $ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # paid software
-$ brew cask install parallels flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink dash moom contexts istat-menus bartender 1password boom-3d alfred
-iexplorer vmware-fusion microsoft-office paragon-ntfs waltr adobe-creative-cloud
+$ brew cask install flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink dash moom contexts istat-menus bartender 1password alfred
+iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens
 
-# DVD/CD Burner
-# freeware
-$ brew cask install burn
-# or paied toast titanium
+# software download directly from the website due to size problem
+# 1. paralles
+# 2. microsoft-office
+# 3. toast titanium
 
 # using npm
 $ npm install -g vtop
 
 # using pip
 $ pip install --user howdoi powerline-status gfwlist2pac
+# export PATH
+$ export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 ```
 
 ## Safari Extensions
 
-Copy all extensions from old ~/Library/Safari/Extensions folder, then reinstall them one by one, directly paste the folder into the new place dose not take effect (I don't know why).
+Double click extensions from old ~/Library/Safari/Extensions folder to install, directly paste the folder into the new place dose not take effect (Still don't know why).
 
 ### Useful Extensions
 
-1. 1 Password
+1. 1Password
 2. Adblock Plus (should update list from options after installation)
 3. Grammarly
 4. NoMoreiTunes
-5. Open in Internet Explorer
+5. "Open In" button for Internet Explorer
 6. Push for Kindle
 7. Sessions
 8. Stylish
    1. baidu lite
    2. flat zhihu
    3. weibo v6
+   4. YouTube - Nyan Cat progress bar video player theme
 9. sVim
 10. Thunder Extension (installed from Thunder app)
+11. Translate
+12. 惠惠购物助手
+13. Polyglot
+14. Clip to DEVONthink
 
 
 ## Enable Anywhere APPs
@@ -206,3 +216,10 @@ Copy all extensions from old ~/Library/Safari/Extensions folder, then reinstall 
 $ sudo spctl --master-disable
 ```
 
+## Dictionaries
+
+Copy all files under then old ~/Library/Dictionaries to the new place.
+
+## Karabiner Elements
+
+Copy old file ~/.config/karabiner/karabiner.json to the new place.
