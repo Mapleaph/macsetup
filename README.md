@@ -50,8 +50,9 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 
    ``` bash
    # vimrc
-   $ git clone https://github.com/mapleaph/vim
-   $ cp vim/vimrc ~/.vimrc
+   $ git clone https://github.com/mapleaph/vim ~/.vim
+   $ cd ~/.vim
+   $ git submodule update --init --recursive
    ```
 
 5. iterm2
@@ -59,7 +60,7 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    ``` bash
    # iterm2
    $ brew cask install iterm2
-   # download color schemes, "Afterglow" is preferred
+   # download color schemes, "Afterglow" or "Dracula" is preferred
    $ git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git
    # then set font to Source Code Pro, preferred size is 12
    ```
@@ -70,6 +71,8 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    # ohmyzsh
    $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
    # exit zsh back to bash
+   $ exit
+   # change the default shell to zsh
    $ chsh -s $(which zsh); exit
    # then edit $HOME/.zshrc file, change the ZSH_THEME to "agnoster"
    ```
@@ -137,9 +140,9 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 ## Common Components
 
 ``` bash
-$ brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils crosstool-ng tmux
+$ brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils crosstool-ng tmux graphviz ctags cmake wakeonlan cscope valgrind pandoc
 
-$ brew cask install appcleaner youdaodict unetbootin etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk spotify typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x jdownloader karabiner-elements nutstore vnc-viewer youdaonote yu-writer 115browser tftpserver burn aerial fliqlo applepi-baker
+$ brew cask install appcleaner youdaodict etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x karabiner-elements nutstore vnc-viewer youdaonote yu-writer 115browser tftpserver burn aerial fliqlo applepi-baker lepton mactex doxygen steam xquartz qqmusic macvim
 
 # android development
 $ brew cask install android-sdk
@@ -168,7 +171,7 @@ $ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # paid software
 $ brew cask install flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink dash moom contexts istat-menus bartender 1password alfred
-iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens
+iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens timing pagico
 
 # software download directly from the website due to size problem
 # 1. paralles
@@ -179,7 +182,7 @@ iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens
 $ npm install -g vtop
 
 # using pip
-$ pip install --user howdoi powerline-status gfwlist2pac
+$ pip install --user howdoi powerline-status gfwlist2pac ici ydcv
 # export PATH
 $ export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 ```
@@ -202,13 +205,29 @@ Double click extensions from old ~/Library/Safari/Extensions folder to install, 
    2. flat zhihu
    3. weibo v6
    4. YouTube - Nyan Cat progress bar video player theme
-9. sVim
-10. Thunder Extension (installed from Thunder app)
-11. Translate
-12. 惠惠购物助手
-13. Polyglot
-14. Clip to DEVONthink
-15. OneNote Web Clipper
+9. sVim（启用这个插件后，无法使用左右键控制视频进度）
+10. vimari
+11. Thunder Extension (installed from Thunder app)
+12. Translate
+13. 惠惠购物助手
+14. Polyglot
+15. Clip to DEVONthink
+16. OneNote Web Clipper
+17. Tampermonkey 系列脚本
+    1. Simple YouTube MP3 Button
+    2. Youtube Best Video Downloader 2
+    3. Download YouTube
+    4. 视频网页全屏
+    5. YouTube +（目前和新版 Youtube 网页冲突，需要改为旧版）
+    6. 视频站启用html5播放器
+    7. 新浪微博之我要看大图
+    8. MiniblogImgPop - 微博浮图
+    9. Mouseover Popup Image Viewer
+    10. 右键在新标签中打开图片时显示最优化图像质量
+    11. DownAlbum
+    12. 百度云插件+APIKey
+    13. Github New Feed Filter
+    14. Userscript+ : 显示当前网站所有可用的UserJS脚本 Jaeger
 
 
 ## Enable Anywhere APPs
