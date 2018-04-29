@@ -105,10 +105,22 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    $ source $HOME/.zshrc
    # list all available python versions
    $ pyenv versions
-   # install python 3.6.2
+   # for example, install python 3.6.5
    $ CFLAGS="-I$(brew --prefix openssl)/include" \
    LDFLAGS="-L$(brew --prefix openssl)/lib" \
-   pyenv install 3.6.2
+   pyenv install 3.6.5
+   # path for pyenv's python
+   # $HOME/Library/Python/x.y/bin
+   # path for brew's python
+   # /usr/local/Cellar/python/3.6.5/bin
+   # /usr/local/Cellar/python@2/2.7.14_3/bin
+
+   # switch between different python versions globally
+   $ pyenv global <version>
+   # or locally
+   $ pyenv local <version>
+   # or only for shell
+   $ pyenv shell <version>
    ```
 
 3. nvm (node version manager)
@@ -157,12 +169,15 @@ $ brew cask install webpquicklook qlcolorcode qlimagesize qlmarkdown qlprettypat
 $ brew tap eddieantonio/eddieantonio
 $ brew install imgcat
 
+# visual studio code
+$ brew install visual-studio-code
 # visual studio code insiders
 $ brew tap caskroom/versions
 $ brew install caskroom/versions/visual-studio-code-insiders
 # vscode plugins
 # 1. vscode-icons
 # 2. one monokai theme
+# 3. ftp-kr
 
 # spacemacs
 $ brew tap d12frosted/emacs-plus
