@@ -75,6 +75,8 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    # change the default shell to zsh
    $ chsh -s $(which zsh); exit
    # then edit $HOME/.zshrc file, change the ZSH_THEME to "agnoster"
+   # or use a third-party theme like this one called jovial, copy the jovial.zsh-theme to .oh-my-zsh/themes folder
+   $ git clone https://github.com/zthxxx/jovial $HOME/; cd $HOME; cp jovial/jovial.zsh-theme $HOME/.oh-my-zsh/themes/; rm -rf jovial
    ```
 
 7. Surge or ShadowsocksX
@@ -152,9 +154,9 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 ## Common Components
 
 ``` bash
-$ brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils crosstool-ng tmux graphviz ctags cmake wakeonlan cscope valgrind pandoc
+$ brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils crosstool-ng tmux graphviz ctags cmake wakeonlan cscope valgrind pandoc tesseract ripgrep mosh
 
-$ brew cask install appcleaner youdaodict etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x karabiner-elements nutstore vnc-viewer youdaonote yu-writer 115browser tftpserver burn aerial fliqlo applepi-baker lepton mactex doxygen steam xquartz qqmusic macvim
+$ brew cask install appcleaner youdaodict etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x karabiner-elements nutstore vnc-viewer youdaonote yu-writer 115browser tftpserver burn aerial fliqlo applepi-baker lepton mactex doxygen steam xquartz qqmusic macvim vimr calibre sqlpro-studio
 
 # android development
 $ brew cask install android-sdk
@@ -178,6 +180,13 @@ $ brew install caskroom/versions/visual-studio-code-insiders
 # 1. vscode-icons
 # 2. one monokai theme
 # 3. ftp-kr
+# 4. vscode-pdf
+# 5. markdownlint
+# 6. Markdown PDF
+# 7. C/C++
+# 8. C/C++ Clang Command Adapter
+# 9. C++ Intellisense
+# 10. Chinese (Simplified) Language Pack for Visual Studio Code
 
 # spacemacs
 $ brew tap d12frosted/emacs-plus
@@ -185,8 +194,8 @@ $ brew install emacs-plus
 $ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # paid software
-$ brew cask install flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink dash moom contexts istat-menus bartender 1password alfred
-iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens timing pagico
+$ brew cask install flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink-pro dash moom contexts istat-menus bartender 1password alfred
+iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens timing pagico crossover expressions gitfinder imazing
 
 # software download directly from the website due to size problem
 # 1. paralles
