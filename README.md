@@ -46,13 +46,26 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    $ brew cask install font-source-code-pro
    ```
 
-4. vimrc
+4. vim and vimrc
+
+   First you should install vim from Homebrew, because vim shipped with macOS does not enable the clipboard functionality.
+   
+   ``` bash
+   $ brew install vim
+   # then export PATH to pick up Homebrew version of vim instead of the system version.
+   # add this line to bashrc or zshrc file
+   $ export PATH=/usr/local/bin:$PATH
+   ```
 
    ``` bash
    # vimrc
    $ git clone https://github.com/mapleaph/vim ~/.vim
    $ cd ~/.vim
    $ git submodule update --init --recursive
+
+   # for YouCompleteMe plugin
+   $ cd bundle/YouCompleteMe
+   $ ./install.py --clang-completer
    ```
 
 5. iterm2
