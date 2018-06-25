@@ -89,7 +89,7 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    $ chsh -s $(which zsh); exit
    # then edit $HOME/.zshrc file, change the ZSH_THEME to "agnoster"
    # or use a third-party theme like this one called jovial, copy the jovial.zsh-theme to .oh-my-zsh/themes folder
-   $ git clone https://github.com/zthxxx/jovial $HOME/; cd $HOME; cp jovial/jovial.zsh-theme $HOME/.oh-my-zsh/themes/; rm -rf jovial
+   $ git clone https://github.com/zthxxx/jovial ~/jovial; cp ~/jovial/jovial.zsh-theme ~/.oh-my-zsh/themes/; rm -rf ~/jovial
    ```
 
 7. Surge or ShadowsocksX
@@ -190,16 +190,20 @@ $ brew install visual-studio-code
 $ brew tap caskroom/versions
 $ brew install caskroom/versions/visual-studio-code-insiders
 # vscode plugins
-# 1. vscode-icons
-# 2. one monokai theme
-# 3. ftp-kr
-# 4. vscode-pdf
-# 5. markdownlint
-# 6. Markdown PDF
-# 7. C/C++
-# 8. C/C++ Clang Command Adapter
-# 9. C++ Intellisense
-# 10. Chinese (Simplified) Language Pack for Visual Studio Code
+# 1. C/C++
+# 2. C/C++ Clang Command Adapter
+# 3. C++ Intellisense
+# 4. Chinese (Simplified) Language Pack for Visual Studio Code
+# 5. Dracula Official
+# 6. ftp-kr
+# 7. GitLens -- Git supercharged
+# 8. Go
+# 9. LaTeX Workshop
+# 10. Markdown PDF/vscode-pdf
+# 11. markdownlint
+# 12. One Monokai Theme
+# 13. vscode-icons
+
 
 # spacemacs
 $ brew tap d12frosted/emacs-plus
@@ -265,7 +269,7 @@ Double click extensions from old ~/Library/Safari/Extensions folder to install, 
     12. 百度云插件+APIKey
     13. Github New Feed Filter
     14. Userscript+ : 显示当前网站所有可用的UserJS脚本 Jaeger
-
+    
 
 ## Enable Anywhere APPs
 
