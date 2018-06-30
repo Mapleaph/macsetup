@@ -6,10 +6,10 @@ The brew version of Java is 9, which has some compatibility issue with macOS Hig
 
 If you have already installed JDK9 using the JDK package, you should uninstall it using the following commands:
 
-``` bash
-$ sudo rm -fr /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
-$ sudo rm -fr /Library/PreferencePanes/JavaControlPanel.prefPane
-$ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
+```bash
+sudo rm -fr /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
+sudo rm -fr /Library/PreferencePanes/JavaControlPanel.prefPane
+sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 ```
 
  There are two ways to install JDK8:
@@ -18,21 +18,21 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 
 2. Install from brew
 
-   ``` bash
-   $ brew cask install caskroom/versions/java8
+   ```bash
+   brew cask install caskroom/versions/java8
    ```
 
 ## Basic Components
 
 1. brew
 
-   ``` bash
-   $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   ```bash
+   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
    ```
 
 2. proxychains-ng
 
-   ``` bash
+   ```bash
    $ brew install proxychains-ng
    # then configure /usr/local/etc/proxychains.conf
    socks5 127.0.0.1 8887
@@ -40,64 +40,64 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 
 3. source code pro fonts
 
-   ``` bash
+   ```bash
    # source code pro fonts
-   $ brew tap caskroom/fonts
-   $ brew cask install font-source-code-pro
+   brew tap caskroom/fonts
+   brew cask install font-source-code-pro
    ```
 
 4. vim and vimrc
 
    First you should install vim from Homebrew, because vim shipped with macOS does not enable the clipboard functionality.
-   
-   ``` bash
-   $ brew install vim
+
+   ```bash
+   brew install vim
    # then export PATH to pick up Homebrew version of vim instead of the system version.
    # add this line to bashrc or zshrc file
-   $ export PATH=/usr/local/bin:$PATH
+   export PATH=/usr/local/bin:$PATH
    ```
 
-   ``` bash
+   ```bash
    # vimrc
-   $ git clone https://github.com/mapleaph/vim ~/.vim
-   $ cd ~/.vim
-   $ git submodule update --init --recursive
+   git clone https://github.com/mapleaph/vim ~/.vim
+   cd ~/.vim
+   git submodule update --init --recursive
 
    # for YouCompleteMe plugin
-   $ cd bundle/YouCompleteMe
-   $ ./install.py --clang-completer
+   cd bundle/YouCompleteMe
+   ./install.py --clang-completer
    ```
 
 5. iterm2
 
-   ``` bash
+   ```bash
    # iterm2
-   $ brew cask install iterm2
+   brew cask install iterm2
    # download color schemes, "Afterglow" or "Dracula" is preferred
-   $ git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git
+   git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git
    # then set font to Source Code Pro, preferred size is 12
    ```
 
 6. ohmyzsh
 
-   ``` bash
+   ```bash
    # ohmyzsh
-   $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
    # exit zsh back to bash
-   $ exit
+   exit
    # change the default shell to zsh
-   $ chsh -s $(which zsh); exit
+   chsh -s $(which zsh); exit
    # then edit $HOME/.zshrc file, change the ZSH_THEME to "agnoster"
    # or use a third-party theme like this one called jovial, copy the jovial.zsh-theme to .oh-my-zsh/themes folder
-   $ git clone https://github.com/zthxxx/jovial ~/jovial; cp ~/jovial/jovial.zsh-theme ~/.oh-my-zsh/themes/; rm -rf ~/jovial
+   git clone https://github.com/zthxxx/jovial ~/jovial; cp ~/jovial/jovial.zsh-theme ~/.oh-my-zsh/themes/; rm -rf ~/jovial
    ```
 
 7. Surge or ShadowsocksX
 
-   ``` bash
+   ```bash
    # install surge or shadowsocksx
-   $ brew cask install surge
-   $ brew cask install shadowsocksx
+   brew cask install surge
+   brew cask install shadowsocksx
    ```
 
 ## Basic Package/Version Managers
@@ -105,23 +105,23 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 1. pip
 
    ```bash
-   $ sudo easy_install pip
+   sudo easy_install pip
    # install package locally, preferred.
-   $ pip install --user PACKAGENAME
+   pip install --user PACKAGENAME
    # install package globally
-   $ pip install PACKAGENAME
+   pip install PACKAGENAME
    ```
 
 2. pyenv
 
    ```bash
-   $ brew install pyenv
-   $ echo "eval \"\$(pyenv init -)\"" >> $HOME/.zshrc
-   $ source $HOME/.zshrc
+   brew install pyenv
+   echo "eval \"\$(pyenv init -)\"" >> $HOME/.zshrc
+   source $HOME/.zshrc
    # list all available python versions
-   $ pyenv versions
+   pyenv versions
    # for example, install python 3.6.5
-   $ CFLAGS="-I$(brew --prefix openssl)/include" \
+   CFLAGS="-I$(brew --prefix openssl)/include" \
    LDFLAGS="-L$(brew --prefix openssl)/lib" \
    pyenv install 3.6.5
    # path for pyenv's python
@@ -131,27 +131,27 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    # /usr/local/Cellar/python@2/2.7.14_3/bin
 
    # switch between different python versions globally
-   $ pyenv global <version>
+   pyenv global <version>
    # or locally
-   $ pyenv local <version>
+   pyenv local <version>
    # or only for shell
-   $ pyenv shell <version>
+   pyenv shell <version>
    ```
 
 3. nvm (node version manager)
 
    ```bash
-   $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
-   $ echo "export NVM_DIR=\"\$HOME/.nvm\"" >> $HOME/.zshrc
-   $ echo "[ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"  # This loads nvm" >> $HOME/.zshrc
-   $ echo "[ -s \"\$NVM_DIR/bash_completion\" ] && . \"\$NVM_DIR/bash_completion\"  # This loads nvm bash_completion" >> $HOME/.zshrc
-   $ source $HOME/.zshrc
+   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+   echo "export NVM_DIR=\"\$HOME/.nvm\"" >> $HOME/.zshrc
+   echo "[ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"  # This loads nvm" >> $HOME/.zshrc
+   echo "[ -s \"\$NVM_DIR/bash_completion\" ] && . \"\$NVM_DIR/bash_completion\"  # This loads nvm bash_completion" >> $HOME/.zshrc
+   source $HOME/.zshrc
    # list installed versions
-   $ nvm ls version
+   nvm ls version
    # list currently used versions
-   $ nvm current
+   nvm current
    # list available remote versions
-   $ nvm ls-remote
+   nvm ls-remote
    ```
 
 4. npm (node package manager)
@@ -159,36 +159,36 @@ $ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    ```bash
    # After nodejs was installed, npm is available
    # install package locally
-   $ npm install PACKAGENAME
+   npm install PACKAGENAME
    # install package globally, preferred.
-   $ npm install -g PACKAGENAME
+   npm install -g PACKAGENAME
    ```
 
 ## Common Components
 
-``` bash
-$ brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils crosstool-ng tmux graphviz ctags cmake wakeonlan cscope valgrind pandoc tesseract ripgrep mosh
+```bash
+brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils crosstool-ng tmux graphviz ctags cmake wakeonlan cscope valgrind pandoc tesseract ripgrep mosh
 
-$ brew cask install appcleaner youdaodict etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x karabiner-elements nutstore vnc-viewer youdaonote yu-writer 115browser tftpserver burn aerial fliqlo applepi-baker lepton mactex doxygen steam xquartz qqmusic macvim vimr calibre sqlpro-studio
+brew cask install appcleaner youdaodict etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x karabiner-elements nutstore vnc-viewer youdaonote yu-writer 115browser tftpserver burn aerial fliqlo applepi-baker lepton mactex doxygen steam xquartz qqmusic macvim vimr calibre sqlpro-studio
 
 # android development
-$ brew cask install android-sdk
+brew cask install android-sdk
 
 # flash player for safari, chrome and firefox, no good to install it, power/resource consuming.
-$ brew cask install flash-player flash-npapi
+brew cask install flash-player flash-npapi
 
 # quick look plugins
-$ brew cask install webpquicklook qlcolorcode qlimagesize qlmarkdown qlprettypatch qlstephen qlvideo quicklook-csv quicklook-json quicklookase suspicious-package
+brew cask install webpquicklook qlcolorcode qlimagesize qlmarkdown qlprettypatch qlstephen qlvideo quicklook-csv quicklook-json quicklookase suspicious-package
 
 # imgcat (not the iterm2 plugin)
-$ brew tap eddieantonio/eddieantonio
-$ brew install imgcat
+brew tap eddieantonio/eddieantonio
+brew install imgcat
 
 # visual studio code
-$ brew install visual-studio-code
+brew install visual-studio-code
 # visual studio code insiders
-$ brew tap caskroom/versions
-$ brew install caskroom/versions/visual-studio-code-insiders
+brew tap caskroom/versions
+brew install caskroom/versions/visual-studio-code-insiders
 # vscode plugins
 # 1. C/C++
 # 2. C/C++ Clang Command Adapter
@@ -206,12 +206,12 @@ $ brew install caskroom/versions/visual-studio-code-insiders
 
 
 # spacemacs
-$ brew tap d12frosted/emacs-plus
-$ brew install emacs-plus
-$ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+brew tap d12frosted/emacs-plus
+brew install emacs-plus
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # paid software
-$ brew cask install flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink-pro dash moom contexts istat-menus bartender 1password alfred
+brew cask install flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink-pro dash moom contexts istat-menus bartender 1password alfred
 iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens timing pagico crossover expressions gitfinder imazing
 
 # software download directly from the website due to size problem
@@ -220,12 +220,12 @@ iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens timing p
 # 3. toast titanium
 
 # using npm
-$ npm install -g vtop
+npm install -g vtop
 
 # using pip
-$ pip install --user howdoi powerline-status gfwlist2pac ici ydcv
+pip install --user howdoi powerline-status gfwlist2pac ici ydcv
 # export PATH
-$ export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 ```
 
 ## Safari Extensions
@@ -269,12 +269,11 @@ Double click extensions from old ~/Library/Safari/Extensions folder to install, 
     12. 百度云插件+APIKey
     13. Github New Feed Filter
     14. Userscript+ : 显示当前网站所有可用的UserJS脚本 Jaeger
-    
 
 ## Enable Anywhere APPs
 
-``` bash
-$ sudo spctl --master-disable
+```bash
+sudo spctl --master-disable
 ```
 
 ## Dictionaries
