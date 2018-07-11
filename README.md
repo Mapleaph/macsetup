@@ -219,11 +219,9 @@ brew install emacs-plus
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # standard emacs using brew
-brew install emacs --HEAD --with-cocoa --with-mailutils --with-librsvg --with-imagemagick
+brew install emacs --with-cocoa --with-mailutils --with-librsvg --with-imagemagick@6
 sudo ln -s $(brew --prefix emacs)/Emacs.app /Applications/
-
-# standard emacs using brew cask (the official said that this is better supported)
-brew cask install emacs
+echo "alias emacs=\"\$(brew --prefix emacs)/Emacs.app/Contents/MacOS/Emacs -nw\"" >> ~/.zshrc
 
 # paid software
 brew cask install flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink-pro dash moom contexts istat-menus bartender 1password alfred
@@ -270,20 +268,20 @@ Double click extensions from old ~/Library/Safari/Extensions folder to install, 
 15. Clip to DEVONthink
 16. OneNote Web Clipper
 17. Tampermonkey 系列脚本
-    1. Simple YouTube MP3 Button
-    2. Youtube Best Video Downloader 2
-    3. Download YouTube
-    4. 视频网页全屏
-    5. YouTube +（目前和新版 Youtube 网页冲突，需要改为旧版）
-    6. 视频站启用html5播放器
-    7. 新浪微博之我要看大图
-    8. MiniblogImgPop - 微博浮图
-    9. Mouseover Popup Image Viewer
-    10. 右键在新标签中打开图片时显示最优化图像质量
-    11. DownAlbum
-    12. 百度云插件+APIKey
-    13. Github New Feed Filter
-    14. Userscript+ : 显示当前网站所有可用的UserJS脚本 Jaeger
+	1. Simple YouTube MP3 Button
+	2. Youtube Best Video Downloader 2
+	3. Download YouTube
+	4. 视频网页全屏
+	5. YouTube +（目前和新版 Youtube 网页冲突，需要改为旧版）
+	6. 视频站启用html5播放器
+	7. 新浪微博之我要看大图
+	8. MiniblogImgPop - 微博浮图
+	9. Mouseover Popup Image Viewer
+	10. 右键在新标签中打开图片时显示最优化图像质量
+	11. DownAlbum
+	12. 百度云插件+APIKey
+	13. Github New Feed Filter
+	14. Userscript+ : 显示当前网站所有可用的UserJS脚本 Jaeger
 
 ## Enable Anywhere APPs
 
