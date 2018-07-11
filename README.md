@@ -169,7 +169,7 @@ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 ```bash
 brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils crosstool-ng tmux graphviz ctags cmake wakeonlan cscope valgrind pandoc tesseract ripgrep mosh
 
-brew cask install appcleaner youdaodict etcher firefox google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x karabiner-elements nutstore vnc-viewer youdaonote yu-writer 115browser tftpserver burn aerial fliqlo applepi-baker lepton mactex doxygen steam xquartz qqmusic macvim vimr calibre sqlpro-studio
+brew cask install appcleaner youdaodict etcher firefox-developer-edition google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x karabiner-elements nutstore vnc-viewer youdaonote yu-writer 115browser tftpserver burn aerial fliqlo applepi-baker lepton mactex doxygen steam xquartz qqmusic macvim vimr calibre sqlpro-studio snipaste sequel-pro transmission mysqlworkbench keyboardcleantool xnconvert dupeguru
 
 # android development
 brew cask install android-sdk
@@ -194,15 +194,23 @@ brew install caskroom/versions/visual-studio-code-insiders
 # 2. C/C++ Clang Command Adapter
 # 3. C++ Intellisense
 # 4. Chinese (Simplified) Language Pack for Visual Studio Code
-# 5. Dracula Official
-# 6. ftp-kr
-# 7. GitLens -- Git supercharged
-# 8. Go
-# 9. LaTeX Workshop
-# 10. Markdown PDF/vscode-pdf
-# 11. markdownlint
-# 12. One Monokai Theme
-# 13. vscode-icons
+# 5. Code Outline
+# 6. Debugger for Java
+# 7. Dracula Official
+# 8. ftp-kr
+# 9. Git History
+# 10. Git Project Manager
+# 11. GitLens -- Git supercharged
+# 12. Go
+# 13. Java Extension Pack
+# 14. Java Test Runner
+# 15. Language Support for Java(TM) by Red Hat
+# 16. LaTeX Workshop
+# 17. Markdown PDF/vscode-pdf
+# 18. markdownlint
+# 19. Maven for Java
+# 20. One Monokai Theme
+# 21. vscode-icons
 
 
 # spacemacs
@@ -210,9 +218,16 @@ brew tap d12frosted/emacs-plus
 brew install emacs-plus
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
+# standard emacs using brew
+brew install emacs --HEAD --with-cocoa --with-mailutils --with-librsvg --with-imagemagick
+sudo ln -s $(brew --prefix emacs)/Emacs.app /Applications/
+
+# standard emacs using brew cask (the official said that this is better supported)
+brew cask install emacs
+
 # paid software
 brew cask install flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink-pro dash moom contexts istat-menus bartender 1password alfred
-iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens timing pagico crossover expressions gitfinder imazing
+iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens timing pagico crossover expressions gitfinder imazing goodsync clion intellij-idea
 
 # software download directly from the website due to size problem
 # 1. paralles
@@ -283,3 +298,26 @@ Copy all files under then old ~/Library/Dictionaries to the new place.
 ## Karabiner Elements
 
 Copy old file ~/.config/karabiner/karabiner.json to the new place.
+
+## Development Setup for STM32
+
+```bash
+# jlink debugger
+brew tap caskroom/drivers
+brew cask install segger-jlink
+
+# openocd
+brew install openocd
+
+# gcc for arm
+brew cask install gcc-arm-embedded
+```
+
+Download STM32CubeMX for macOS, then install it:
+
+```bash
+sudo xattr -r -d com.apple.quarantine SetupSTM32CubeMX-4.26.0.app
+open SetupSTM32CubeMX-4.26.0.app
+```
+
+After installing Clion, install plugin called OpenOCD + STM32CubeMX support for ARM embedded development.
