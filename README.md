@@ -2,6 +2,12 @@
 
 ## Java
 
+Java 10 now has no problem with macOS High Sierra.
+
+```bash
+brew cask install java
+```
+
 The brew version of Java is 9, which has some compatibility issue with macOS High Sierra (10.13).
 
 If you have already installed JDK9 using the JDK package, you should uninstall it using the following commands:
@@ -60,12 +66,10 @@ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    ```bash
    # vimrc
    git clone https://github.com/mapleaph/vim ~/.vim
-   cd ~/.vim
-   git submodule update --init --recursive
+   cd ~/.vim; git submodule update --init --recursive
 
    # for YouCompleteMe plugin
-   cd bundle/YouCompleteMe
-   ./install.py --clang-completer
+   cd bundle/YouCompleteMe; ./install.py --clang-completer
    ```
 
 5. iterm2
@@ -83,13 +87,16 @@ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    ```bash
    # ohmyzsh
    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+   cd ~; git clone https://github.com/mapleaph/zshrc ~/.zshrcgit; rm -r .zshrc; ln -s .zshrcgit/zshrc .zshrc
+   # then edit $HOME/.zshrc file, change the ZSH_THEME to "agnoster"
+   # or use a third-party theme like this one called jovial, copy the jovial.zsh-theme to .oh-my-zsh/themes folder
+   git clone https://github.com/zthxxx/jovial ~/jovial; cp ~/jovial/jovial.zsh-theme ~/.oh-my-zsh/themes/; rm -rf ~/jovial
+
    # exit zsh back to bash
    exit
    # change the default shell to zsh
    chsh -s $(which zsh); exit
-   # then edit $HOME/.zshrc file, change the ZSH_THEME to "agnoster"
-   # or use a third-party theme like this one called jovial, copy the jovial.zsh-theme to .oh-my-zsh/themes folder
-   git clone https://github.com/zthxxx/jovial ~/jovial; cp ~/jovial/jovial.zsh-theme ~/.oh-my-zsh/themes/; rm -rf ~/jovial
    ```
 
 7. Surge or ShadowsocksX
@@ -167,9 +174,9 @@ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 ## Common Components
 
 ```bash
-brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig rg trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils crosstool-ng tmux graphviz ctags cmake wakeonlan cscope valgrind pandoc tesseract ripgrep mosh
+brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils crosstool-ng tmux graphviz ctags cmake wakeonlan cscope valgrind tesseract ripgrep mosh
 
-brew cask install appcleaner youdaodict etcher firefox-developer-edition google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x karabiner-elements nutstore vnc-viewer youdaonote yu-writer 115browser tftpserver burn aerial fliqlo applepi-baker lepton mactex doxygen steam xquartz qqmusic macvim vimr calibre sqlpro-studio snipaste sequel-pro transmission mysqlworkbench keyboardcleantool xnconvert dupeguru
+brew cask install appcleaner youdaodict etcher firefox-developer-edition google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram disk-inventory-x karabiner-elements vnc-viewer youdaonote 115browser tftpserver burn aerial fliqlo applepi-baker lepton mactex doxygen steam xquartz qqmusic macvim vimr calibre sqlpro-studio snipaste sequel-pro transmission mysqlworkbench keyboardcleantool xnconvert dupeguru
 
 # android development
 brew cask install android-sdk
@@ -185,10 +192,10 @@ brew tap eddieantonio/eddieantonio
 brew install imgcat
 
 # visual studio code
-brew install visual-studio-code
+brew cask install visual-studio-code
 # visual studio code insiders
 brew tap caskroom/versions
-brew install caskroom/versions/visual-studio-code-insiders
+brew cask install caskroom/versions/visual-studio-code-insiders
 # vscode plugins
 # 1. C/C++
 # 2. C/C++ Clang Command Adapter
@@ -224,21 +231,33 @@ sudo ln -s $(brew --prefix emacs)/Emacs.app /Applications/
 echo "alias emacs=\"\$(brew --prefix emacs)/Emacs.app/Contents/MacOS/Emacs -nw\"" >> ~/.zshrc
 
 # paid software
-brew cask install flume daisydisk beyond-compare manuscripts pdfexpert tripmode commander-one devonthink-pro dash moom contexts istat-menus bartender 1password alfred
-iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens timing pagico crossover expressions gitfinder imazing goodsync clion intellij-idea
+brew cask install flume daisydisk beyond-compare manuscripts pdf-expert tripmode commander-one devonthink-pro dash moom contexts istat-menus bartender alfred iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens timing pagico crossover expressions gitfinder imazing goodsync clion intellij-idea
+
+# 1password6
+brew cask install caskroom/versions/1password6
 
 # software download directly from the website due to size problem
 # 1. paralles
 # 2. microsoft-office
 # 3. toast titanium
+# 4. nutstore
+# 5. yu-writer
+# 6. mweb
 
 # using npm
-npm install -g vtop
+npm install -g vtop gtop
 
 # using pip
 pip install --user howdoi powerline-status gfwlist2pac ici ydcv
 # export PATH
 export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+
+# or
+
+# using pip3
+pip3 install --user howdoi powerline-status gfwlist2pac ici ydcv
+# export PATH
+export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 ```
 
 ## Safari Extensions
@@ -254,12 +273,12 @@ Double click extensions from old ~/Library/Safari/Extensions folder to install, 
 5. "Open In" button for Internet Explorer
 6. Push for Kindle
 7. Sessions
-8. Stylish
+<!-- 8. Stylish
    1. baidu lite
    2. flat zhihu
    3. weibo v6
    4. YouTube - Nyan Cat progress bar video player theme
-9. sVim（启用这个插件后，无法使用左右键控制视频进度）
+9. sVim（启用这个插件后，无法使用左右键控制视频进度） -->
 10. vimari
 11. Thunder Extension (installed from Thunder app)
 12. Translate
