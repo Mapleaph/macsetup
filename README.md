@@ -90,9 +90,9 @@ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 
    cd ~; git clone https://github.com/mapleaph/zshrc ~/.zshrcgit; rm -r .zshrc; ln -s .zshrcgit/zshrc .zshrc
    # then edit $HOME/.zshrc file, change the ZSH_THEME to "agnoster"
-   # or use a third-party theme like this one called jovial, copy the jovial.zsh-theme to .oh-my-zsh/themes folder
+   # third-party themes
    git clone https://github.com/zthxxx/jovial ~/jovial; cp ~/jovial/jovial.zsh-theme ~/.oh-my-zsh/themes/; rm -rf ~/jovial
-
+   git clone https://github.com/skyerlee/zeta-zsh-theme ~/zeta; cp ~/zeta/zeta.zsh-theme ~/.oh-my-zsh/themes/; rm -rf ~/zeta
    # exit zsh back to bash
    exit
    # change the default shell to zsh
