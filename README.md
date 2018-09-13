@@ -314,7 +314,9 @@ Copy all files under then old ~/Library/Dictionaries to the new place.
 
 ## Karabiner Elements
 
-Copy old file ~/.config/karabiner/karabiner.json to the new place.
+```bash
+git clone https://github.com/mapleaph/karabiner ~/.config/karabiner
+```
 
 ## Development Setup for STM32
 
