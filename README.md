@@ -312,6 +312,12 @@ sudo spctl --master-disable
 
 Copy all files under then old ~/Library/Dictionaries to the new place.
 
+## Snipaste
+
+```bash
+git clone https://github.com/Mapleaph/snipaste_config ~/.snipaste
+```
+
 ## Karabiner Elements
 
 ```bash
@@ -340,3 +346,7 @@ open SetupSTM32CubeMX-4.26.0.app
 ```
 
 After installing Clion, install plugin called OpenOCD + STM32CubeMX support for ARM embedded development.
+
+## Time machine
+
+uncheck Back Up Automatically to save spaces.
