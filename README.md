@@ -91,8 +91,14 @@ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    cd ~; git clone https://github.com/mapleaph/zshrc ~/.zshrcgit; rm -r .zshrc; ln -s .zshrcgit/zshrc .zshrc
    # then edit $HOME/.zshrc file, change the ZSH_THEME to "agnoster"
    # third-party themes
-   git clone https://github.com/zthxxx/jovial ~/jovial; cp ~/jovial/jovial.zsh-theme ~/.oh-my-zsh/themes/; rm -rf ~/jovial
-   git clone https://github.com/skyerlee/zeta-zsh-theme ~/zeta; cp ~/zeta/zeta.zsh-theme ~/.oh-my-zsh/themes/; rm -rf ~/zeta
+   ## ZSH_THEME="jovial/jovial"
+   git clone https://github.com/zthxxx/jovial.git ~/.oh-my-zsh/custom/themes/jovial
+   ## ZSH_THEME="zeta-zsh-theme/zeta"
+   git clone https://github.com/skyerlee/zeta-zsh-theme.git ~/.oh-my-zsh/custom/themes/zeta-zsh-theme
+   ## ZSH_THEME="spaceship-prompt/spaceship"
+   git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/custom/themes/spaceship-prompt
+   ## ZSH_THEME="powerlevel9k/powerlevel9k"
+   git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
    # exit zsh back to bash
    exit
    # change the default shell to zsh
