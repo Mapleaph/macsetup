@@ -356,3 +356,7 @@ After installing Clion, install plugin called OpenOCD + STM32CubeMX support for 
 ## Time machine
 
 uncheck Back Up Automatically to save spaces.
+
+## Dash
+
+Integration, Snippets and Sync file.
