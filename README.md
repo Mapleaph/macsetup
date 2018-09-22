@@ -182,7 +182,7 @@ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 ```bash
 brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils crosstool-ng tmux graphviz ctags cmake wakeonlan cscope valgrind tesseract ripgrep mosh isc-dhcp
 
-brew cask install appcleaner youdaodict etcher firefox-developer-edition google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram-desktop disk-inventory-x karabiner-elements vnc-viewer youdaonote 115browser tftpserver burn aerial fliqlo applepi-baker lepton mactex doxygen steam xquartz qqmusic macvim vimr calibre sqlpro-studio snipaste sequel-pro transmission mysqlworkbench keyboardcleantool xnconvert dupeguru
+brew cask install appcleaner youdaodict etcher firefox-developer-edition google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram-desktop disk-inventory-x karabiner-elements vnc-viewer youdaonote 115browser tftpserver burn aerial fliqlo applepi-baker lepton mactex doxygen steam xquartz qqmusic macvim vimr calibre sqlpro-studio snipaste sequel-pro transmission mysqlworkbench keyboardcleantool xnconvert dupeguru dingtalk enpass fantastical slack
 
 # android development
 brew cask install android-sdk
@@ -240,7 +240,7 @@ echo "alias emacs=\"\$(brew --prefix emacs)/Emacs.app/Contents/MacOS/Emacs -nw\"
 brew cask install flume daisydisk beyond-compare manuscripts pdf-expert tripmode commander-one devonthink-pro dash moom contexts istat-menus bartender alfred iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens timing pagico crossover expressions gitfinder imazing goodsync clion intellij-idea
 
 # 1password6
-brew cask install caskroom/versions/1password6
+#brew cask install caskroom/versions/1password6
 
 # software download directly from the website due to size problem
 # 1. paralles
