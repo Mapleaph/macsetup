@@ -1,36 +1,23 @@
 # macOS Setup
 
-## Java
-
-Java 10 now has no problem with macOS High Sierra.
+## Internet
 
 ```bash
-brew cask install java
+# brew cask install surge
+# install surge from local backup is a better choice
+brew cask install shadowsocksx
+brew tap v2ray/v2ray
+brew install v2ray-core
+sudo brew services start v2ray-core
 ```
 
-The brew version of Java is 9, which has some compatibility issue with macOS High Sierra (10.13).
+## Xcode
 
-If you have already installed JDK9 using the JDK package, you should uninstall it using the following commands:
-
-```bash
-sudo rm -fr /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
-sudo rm -fr /Library/PreferencePanes/JavaControlPanel.prefPane
-sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
-```
-
- There are two ways to install JDK8:
-
-1. Download and install JDK8 from Java website.
-
-2. Install from brew
-
-   ```bash
-   brew cask install caskroom/versions/java8
-   ```
+Install Xcode from App Store or just install the neccessary tools when installing homebrew.
 
 ## Basic Components
 
-1. brew
+1. homebrew
 
    ```bash
    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -44,45 +31,24 @@ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    socks5 127.0.0.1 8887
    ```
 
-3. source code pro fonts
+3. fonts
 
    ```bash
-   # source code pro fonts
    brew tap caskroom/fonts
-   brew cask install font-source-code-pro
+   brew cask install font-source-code-pro font-hanamina
    ```
 
-4. vim and vimrc
-
-   First you should install vim from Homebrew, because vim shipped with macOS does not enable the clipboard functionality.
-
-   ```bash
-   brew install vim
-   # then export PATH to pick up Homebrew version of vim instead of the system version.
-   # add this line to bashrc or zshrc file
-   export PATH=/usr/local/bin:$PATH
-   ```
-
-   ```bash
-   # vimrc
-   git clone https://github.com/mapleaph/vim ~/.vim
-   cd ~/.vim; git submodule update --init --recursive
-
-   # for YouCompleteMe plugin
-   cd bundle/YouCompleteMe; ./install.py --clang-completer
-   ```
-
-5. iterm2
+4. iterm2
 
    ```bash
    # iterm2
    brew cask install iterm2
    # download color schemes, "Afterglow" or "Dracula" is preferred
    git clone https://github.com/mbadolato/iTerm2-Color-Schemes.git
-   # then set font to Source Code Pro, preferred size is 12
+   # then set font to Source Code Pro, preferred size is 13
    ```
 
-6. ohmyzsh
+5. ohmyzsh
 
    ```bash
    # ohmyzsh
@@ -105,12 +71,35 @@ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    chsh -s $(which zsh); exit
    ```
 
-7. Surge or ShadowsocksX
+6. vim and vimrc
+
+   First you should install vim from Homebrew, because vim shipped with macOS does not enable the clipboard functionality.
 
    ```bash
-   # install surge or shadowsocksx
-   brew cask install surge
-   brew cask install shadowsocksx
+   brew install vim
+   # then export PATH to pick up Homebrew version of vim instead of the system version.
+   # add this line to bashrc or zshrc file
+   export PATH=/usr/local/bin:$PATH
+
+   # vimrc
+   git clone https://github.com/mapleaph/vim ~/.vim
+   cd ~/.vim; git submodule update --init --recursive
+
+   # for YouCompleteMe plugin
+   cd bundle/YouCompleteMe; ./install.py --clang-completer --js-completer
+   ```
+
+6. zsh-completion
+
+   ```bash
+   brew install zsh-completion
+
+   # then add the following to .zshrc
+   fpath=(path/to/zsh-completions/src $fpath)
+
+   # then execute following commands
+   rm -f ~/.zcompdump; compinit
+   chmod go-w '/usr/local/share'
    ```
 
 ## Basic Package/Version Managers
@@ -133,14 +122,12 @@ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
    source $HOME/.zshrc
    # list all available python versions
    pyenv versions
-   # for example, install python 3.6.5
-   CFLAGS="-I$(brew --prefix openssl)/include" \
-   LDFLAGS="-L$(brew --prefix openssl)/lib" \
-   pyenv install 3.6.5
+   # for example, install python 3.7.0
+   CFLAGS="-I$(xcrun --show-sdk-path)/usr/include" pyenv install -v 3.7.0
    # path for pyenv's python
    # $HOME/Library/Python/x.y/bin
    # path for brew's python
-   # /usr/local/Cellar/python/3.6.5/bin
+   # /usr/local/Cellar/python/3.7.0/bin
    # /usr/local/Cellar/python@2/2.7.14_3/bin
 
    # switch between different python versions globally
@@ -180,9 +167,109 @@ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk-9.jdk
 ## Common Components
 
 ```bash
-brew install archey thefuck m-cli magic-wormhole mas progress tldr you-get youtube-dl tig trash wget zsh-syntax-highlighting ffmpeg ccat entr fzf gnuplot lolcat pandoc screenfetch openssl harfbuzz dnsmasq ispell coreutils crosstool-ng tmux graphviz ctags cmake wakeonlan cscope valgrind tesseract ripgrep mosh isc-dhcp
+brew install archey \
+             thefuck \
+             m-cli \
+             magic-wormhole \
+             mas \
+             progress \
+             tldr \
+             you-get \
+             youtube-dl \
+             tig \
+             trash \
+             wget \
+             zsh-syntax-highlighting \
+             ffmpeg \
+             ccat \
+             entr \
+             fzf \
+             gnuplot \
+             lolcat \
+             pandoc \
+             screenfetch \
+             openssl \
+             harfbuzz \
+             dnsmasq \
+             ispell \
+             coreutils \
+             tmux \
+             graphviz \
+             ctags \
+             cmake \
+             wakeonlan \
+             cscope \
+             tesseract \
+             ripgrep \
+             mosh \
+             isc-dhcp \
+             boost \
+             yarn --without-node \
+             git-flow \
+             git-lfs \
+             elinks \
+             autojump
 
-brew cask install appcleaner youdaodict etcher firefox-developer-edition google-chrome arduino mpv xld kindle xiami neteasemusic iina lyricsx android-file-transfer handshaker gpg-suite aliwangwang qq vlc ichm namechanger grammarly cyberduck thunder baidunetdisk typora sourcetree keka veracrypt go2shell oversight coconutbattery google-backup-and-sync dropbox artpip vagrant virtualbox virtualbox-extension-pack wireshark telegram-desktop disk-inventory-x karabiner-elements vnc-viewer youdaonote 115browser tftpserver burn aerial fliqlo applepi-baker lepton mactex doxygen steam xquartz qqmusic macvim vimr calibre sqlpro-studio snipaste sequel-pro transmission mysqlworkbench keyboardcleantool xnconvert dupeguru dingtalk enpass fantastical slack
+brew cask install appcleaner \
+             etcher \
+             firefox \
+             google-chrome \
+             mpv \
+             iina \
+             xld \
+             kindle \
+             xiami \
+             neteasemusic \
+             lyricsx \
+             gpg-suite \
+             aliwangwang \
+             qq \
+             vlc \
+             ichm \
+             namechanger \
+             grammarly \
+             cyberduck \
+             thunder \
+             baidunetdisk \
+             typora \
+             sourcetree \
+             switchhosts \
+             keka \
+             veracrypt \
+             go2shell \
+             oversight \
+             wireshark \
+             telegram-desktop \
+             karabiner-elements \
+             vnc-viewer \
+             tftpserver \
+             burn \
+             aerial \
+             fliqlo \
+             applepi-baker \
+             lepton \
+             doxygen \
+             steam \
+             xquartz \
+             macvim \
+             calibre \
+             sqlpro-studio \
+             snipaste \
+             sequel-pro \
+             mysqlworkbench \
+             keyboardcleantool \
+             xnconvert \
+             dupeguru \
+             dingtalk \
+             fantastical \
+             android-file-transfer \
+             handshaker \
+             clipy \
+             boxcryptor \
+             omnifocus \
+             omnigraffle \
+             proxifier \
+             mactex
 
 # android development
 brew cask install android-sdk
@@ -202,6 +289,8 @@ brew cask install visual-studio-code
 # visual studio code insiders
 brew tap caskroom/versions
 brew cask install caskroom/versions/visual-studio-code-insiders
+# Finder plugin for visual studio code
+brew cask install open-in-code
 # vscode plugins
 # 1. C/C++
 # 2. C/C++ Clang Command Adapter
@@ -237,10 +326,31 @@ sudo ln -s $(brew --prefix emacs)/Emacs.app /Applications/
 echo "alias emacs=\"\$(brew --prefix emacs)/Emacs.app/Contents/MacOS/Emacs -nw\"" >> ~/.zshrc
 
 # paid software
-brew cask install flume daisydisk beyond-compare manuscripts pdf-expert tripmode commander-one devonthink-pro dash moom contexts istat-menus bartender alfred iexplorer vmware-fusion paragon-ntfs waltr adobe-creative-cloud screens timing pagico crossover expressions gitfinder imazing goodsync clion intellij-idea
+brew cask install daisydisk \
+                  beyond-compare \
+                  manuscripts \
+                  pdf-expert \
+                  tripmode \
+                  commander-one \
+                  devonthink-pro \
+                  dash \
+                  moom \
+                  contexts \
+                  istat-menus \
+                  bartender \
+                  alfred \
+                  vmware-fusion \
+                  paragon-ntfs \
+                  adobe-creative-cloud \
+                  screens \
+                  timing \
+                  crossover \
+                  expressions \
+                  imazing \
+                  jetbrains-toolbox
 
 # 1password6
-#brew cask install caskroom/versions/1password6
+brew cask install caskroom/versions/1password6
 
 # software download directly from the website due to size problem
 # 1. paralles
@@ -249,6 +359,30 @@ brew cask install flume daisydisk beyond-compare manuscripts pdf-expert tripmode
 # 4. nutstore
 # 5. yu-writer
 # 6. mweb
+
+# download from website due to wrong checksum
+# 1. coconutbattery
+# 2. goodsync
+
+# installation from App Store
+# enpass
+# The Unarchiver
+# Reeder 3
+# MindNode 5
+# Agenda
+# ToothFairy
+# Trello
+# iA Writer
+# Spark
+# Easy New File
+# Irvue
+# Snap
+# BlueHarvest
+# PopClip
+# Slack
+# Amphetamine
+# TextWrangler
+# TickTick
 
 # using npm
 npm install -g vtop gtop t-get
@@ -351,7 +485,7 @@ sudo xattr -r -d com.apple.quarantine SetupSTM32CubeMX-4.26.0.app
 open SetupSTM32CubeMX-4.26.0.app
 ```
 
-After installing Clion, install plugin called OpenOCD + STM32CubeMX support for ARM embedded development.
+After installing CLion, install plugin called OpenOCD + STM32CubeMX support for ARM embedded development.
 
 ## Time machine
 
@@ -360,3 +494,11 @@ uncheck Back Up Automatically to save spaces.
 ## Dash
 
 Integration, Snippets and Sync file.
+
+## git
+
+```bash
+git clone https://github.com/mapleaph/git ~/.gitconfigdir
+cd ~
+ln -s .gitconfigdir/gitconfig .gitconfig
+```
