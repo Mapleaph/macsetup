@@ -208,7 +208,19 @@ brew install archey \
              git-flow \
              git-lfs \
              elinks \
-             autojump
+             autojump \
+             aria2 \
+             autoconf \
+             automake \
+             bash \
+             binutils \
+             cocoapods \
+             gotop \
+             ipcalc \
+             iproute2mac \
+             socat \
+             
+             
 
 brew cask install appcleaner \
              etcher \
@@ -269,7 +281,16 @@ brew cask install appcleaner \
              omnifocus \
              omnigraffle \
              proxifier \
-             mactex
+             mactex \
+             texstudio \
+             nvalt \
+             anydesk \
+             gtkwave \
+             macdown \
+             onedrive \
+             osxfuse \
+             squirrel \
+             vagrant
 
 # android development
 brew cask install android-sdk
@@ -313,7 +334,7 @@ brew cask install open-in-code
 # 19. Maven for Java
 # 20. One Monokai Theme
 # 21. vscode-icons
-
+# 22. Prettier - Code formatter
 
 # spacemacs
 brew tap d12frosted/emacs-plus
@@ -347,7 +368,10 @@ brew cask install daisydisk \
                   crossover \
                   expressions \
                   imazing \
-                  jetbrains-toolbox
+                  jetbrains-toolbox \
+                  disk-drill \
+                  hyperdock \
+                  synergy
 
 # 1password6
 brew cask install caskroom/versions/1password6
@@ -385,17 +409,17 @@ brew cask install caskroom/versions/1password6
 # TickTick
 
 # using npm
-npm install -g vtop gtop t-get
+npm install -g vtop gtop t-get tldr
 
 # using pip
-pip install --user howdoi powerline-status gfwlist2pac ici ydcv
+pip install --user howdoi powerline-status gfwlist2pac ici ydcv cheat
 # export PATH
 export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 
 # or
 
 # using pip3
-pip3 install --user howdoi powerline-status gfwlist2pac ici ydcv
+pip3 install --user howdoi powerline-status gfwlist2pac ici ydcv cheat
 # export PATH
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 ```
