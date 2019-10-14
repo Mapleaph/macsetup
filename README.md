@@ -34,7 +34,7 @@ Install Xcode from App Store or just install the neccessary tools when installin
 3. fonts
 
    ```bash
-   brew tap caskroom/fonts
+   brew tap homebrew/cask-fonts
    brew cask install font-source-code-pro font-hanamina
    ```
 
@@ -120,16 +120,17 @@ Install Xcode from App Store or just install the neccessary tools when installin
    brew install pyenv
    echo "eval \"\$(pyenv init -)\"" >> $HOME/.zshrc
    source $HOME/.zshrc
-   # list all available python versions
+   # list all installed python versions
    pyenv versions
-   # for example, install python 3.7.0
+   # hit TAB after pyenv install lists all available python versions
+   # install python 3.7.0, for example
    CFLAGS="-I$(xcrun --show-sdk-path)/usr/include" pyenv install -v 3.7.0
    # path for pyenv's python
-   # $HOME/Library/Python/x.y/bin
+   # $HOME/.pyenv/versions/x.y.z/bin
    # path for brew's python
-   # /usr/local/Cellar/python/3.7.0/bin
+   # /usr/local/Cellar/python/3.7.4_1/bin
    # /usr/local/Cellar/python@2/2.7.14_3/bin
-
+   
    # switch between different python versions globally
    pyenv global <version>
    # or locally
@@ -147,11 +148,13 @@ Install Xcode from App Store or just install the neccessary tools when installin
    echo "[ -s \"\$NVM_DIR/bash_completion\" ] && . \"\$NVM_DIR/bash_completion\"  # This loads nvm bash_completion" >> $HOME/.zshrc
    source $HOME/.zshrc
    # list installed versions
-   nvm ls version
+   nvm ls
    # list currently used versions
    nvm current
    # list available remote versions
    nvm ls-remote
+   # install latest npm
+   nvm install --latest-npm
    ```
 
 4. npm (node package manager)
@@ -162,6 +165,13 @@ Install Xcode from App Store or just install the neccessary tools when installin
    npm install PACKAGENAME
    # install package globally, preferred.
    npm install -g PACKAGENAME
+   ```
+
+5. perlbrew
+
+   ```bash
+   \curl -L https://install.perlbrew.pl | bash
+   echo "source ~/perl5/perlbrew/etc/bashrc" >> ~/.zshrc
    ```
 
 ## Common Components
@@ -241,6 +251,7 @@ brew install adwaita-icon-theme \
              help2man \
              hicolor-icon-theme \
              highlight \
+             hstr \
              htop \
              icarus-verilog \
              icu4c \
@@ -258,58 +269,15 @@ brew install adwaita-icon-theme \
              json-glib \
              lame \
              leptonica \
-             libarchive \
-             libass \
-             libbluray \
-             libcerf \
-             libcroco \
-             libepoxy \
-             libevent \
-             libffi \
-             libgcrypt \
-             libgpg-error \
-             libidn2 \
-             libimobiledevice \
-             libmms \
-             libogg \
-             libosinfo \
-             libplist \
-             libpng \
-             libpsl \
-             librsvg \
-             libsamplerate \
-             libshout \
-             libsndfile \
-             libsodium \
-             libsoup \
-             libsoxr \
-             libssh2 \
-             libtasn1 \
-             libtiff \
-             libtool \
-             libunistring \
-             libusb \
-             libvirt \
-             libvirt-glib \
-             libvorbis \
-             libvpx \
-             libxml2 \
-             libyaml \
-             libzip \
              little-cms2 \
              lolcat \
-             lua \
-             lua@5.1 \
              lz4 \
              m-cli \
-             m4 \
              magic-wormhole \
              mailutils \
              mas \
              meson \
-             mpfr \
              nasm \
-             ncurses \
              netpbm \
              netperf \
              nettle \
@@ -325,23 +293,10 @@ brew install adwaita-icon-theme \
              orc \
              osinfo-db \
              osinfo-db-tools \
-             p11-kit \
              pandoc \
-             pango \
-             pcre \
-             pcre2 \
-             perl \
-             pixman \
-             pkg-config \
              progress \
              pstree \
-             py2cairo \
-             py3cairo \
-             pygobject3 \
-             python \
-             python@2 \
              qemu \
-             readline \
              ripgrep \
              rtmpdump \
              rubberband \
@@ -670,6 +625,14 @@ git clone https://github.com/Mapleaph/snipaste_config ~/.snipaste
 git clone https://github.com/mapleaph/karabiner ~/.config/karabiner
 ```
 
+## git
+
+```bash
+git clone https://github.com/mapleaph/git ~/.gitconfigdir
+cd ~
+ln -s .gitconfigdir/gitconfig .gitconfig
+```
+
 ## Development Setup for STM32
 
 ```bash
@@ -695,16 +658,8 @@ After installing CLion, install plugin called OpenOCD + STM32CubeMX support for 
 
 ## Time machine
 
-uncheck Back Up Automatically to save spaces.
+Uncheck "Back Up Automatically" to save spaces.
 
 ## Dash
 
 Integration, Snippets and Sync file.
-
-## git
-
-```bash
-git clone https://github.com/mapleaph/git ~/.gitconfigdir
-cd ~
-ln -s .gitconfigdir/gitconfig .gitconfig
-```
