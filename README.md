@@ -84,6 +84,7 @@ Install Xcode from App Store or just install the neccessary tools when installin
    # vimrc
    git clone https://github.com/mapleaph/vim ~/.vim
    cd ~/.vim; git submodule update --init --recursive
+   # manually clone each module in case of the command failed.
 
    # for YouCompleteMe plugin
    cd bundle/YouCompleteMe; ./install.py --clang-completer --js-completer
@@ -154,7 +155,8 @@ Install Xcode from App Store or just install the neccessary tools when installin
    # list available remote versions
    nvm ls-remote
    # install latest npm
-   nvm install --latest-npm
+   nvm use node
+   nvm --install-latest-npm
    ```
 
 4. npm (node package manager)
