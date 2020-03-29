@@ -259,6 +259,7 @@ brew install adwaita-icon-theme \
              icu4c \
              ideviceinstaller \
              imagemagick@6 \
+             iftop \
              intltool \
              ios-deploy \
              ipcalc \
@@ -365,6 +366,7 @@ brew cask install aerial \
              commandq \
              cyberduck \
              dingtalk \
+             docker \
              doxygen \
              dupeguru \
              fantastical \
@@ -381,6 +383,7 @@ brew cask install aerial \
              ichm \
              iina \
              java \
+             joplin \
              karabiner-elements \
              keka \
              keyboardcleantool \
@@ -391,6 +394,7 @@ brew cask install aerial \
              lyricsx \
              macdown \
              macvim \
+             mediainfo \
              michaelvillar-timer \
              microsoft-remote-desktop-beta \
              mpv \
@@ -406,7 +410,9 @@ brew cask install aerial \
              oversight \
              qq \
              sequel-pro \
+             skim \
              snipaste \
+             sourcetrail \
              sourcetree \
              spotify \
              sqlpro-studio \
@@ -415,9 +421,11 @@ brew cask install aerial \
              switchhosts \
              teamviewer \
              telegram-desktop \
+             textmate \
              tftpserver \
              thunder \
              tuntap \
+             turbo-boost-switcher \
              typora \
              unetbootin \
              vagrant \
@@ -510,6 +518,8 @@ brew cask install daisydisk \
                   jetbrains-toolbox \
                   disk-drill \
                   hyperdock \
+                  houdahspot \
+                  marginnote \
                   synergy
 
 # 1password6
