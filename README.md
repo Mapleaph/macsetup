@@ -76,31 +76,35 @@ Install Xcode from App Store or just install the neccessary tools when installin
    First you should install vim from Homebrew, because vim shipped with macOS does not enable the clipboard functionality.
 
    ```bash
-   brew install vim
-   # then export PATH to pick up Homebrew version of vim instead of the system version.
-   # add this line to bashrc or zshrc file
-   export PATH=/usr/local/bin:$PATH
-
-   # vimrc
-   git clone https://github.com/mapleaph/vim ~/.vim
-   cd ~/.vim; git submodule update --init --recursive
-   # manually clone each module in case of the command failed.
-
-   # for YouCompleteMe plugin
-   cd bundle/YouCompleteMe; ./install.py --clang-completer --js-completer
+   # Installation
+   brew install neovim
+   
+   # vim-plug
+   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   
+   git clone https://github.com/mapleaph/nvim ~/.config/
+   # Open nvim and use :PlugInstall to install all plugins
    ```
 
 6. zsh-completion
 
    ```bash
    brew install zsh-completion
-
+   
    # then add the following to .zshrc
    fpath=(path/to/zsh-completions/src $fpath)
-
+   
    # then execute following commands
    rm -f ~/.zcompdump; compinit
    chmod go-w '/usr/local/share'
+   ```
+
+8. tmux
+
+   ```bash
+   git clone https://github.com/mapleaph/tmux ~/.tmuxgit
+   ln -s ~/.tmuxgit/tmux.conf ~/.tmux.conf
    ```
 
 ## Basic Package/Version Managers
@@ -586,7 +590,7 @@ Double click extensions from old ~/Library/Safari/Extensions folder to install, 
 5. "Open In" button for Internet Explorer
 6. Push for Kindle
 7. Sessions
-<!-- 8. Stylish
+   <!-- 8. Stylish
    1. baidu lite
    2. flat zhihu
    3. weibo v6
